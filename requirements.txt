@@ -2,8 +2,9 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
 
 # ----- lightweight CPU wheels (no compiler) -----
-torch==2.2.2+cpu          # exists & 5× smaller than 2.8
-torchvision==0.17.2+cpu   # matching pair
+torch==2.2.2+cpu
+torchvision==0.17.2+cpu
+transformers==4.30.2          # ← ADD THIS LINE
 opencv-python-headless==4.8.1.78
 Pillow==9.5.0
 numpy==1.24.3
@@ -14,10 +15,9 @@ scipy==1.11.2
 scikit-learn==1.3.0
 fastapi==0.103.1
 uvicorn[standard]==0.23.2
-gradio==3.44.4            # exists (3.44.3 does not)
+gradio==3.44.4
 python-multipart==0.0.6
 aiofiles==23.2.1
 httpx==0.24.1
 python-dotenv==1.0.0
 imageio==2.31.3
-#  DROP:  basicsr, gfpgan, deoldify, facexlib, realesrgan, filterpy, numba, wandb, imageio-ffmpeg → saves 5-6 min
