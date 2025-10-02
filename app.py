@@ -29,10 +29,12 @@ import numpy as np
 # ML imports
 import torch
 import cv2
-from gfpgan import GFPGANer
-from deoldify import device
-from deoldify.device_id import DeviceId
-from deoldify.visualize import get_image_colorizer
+# ---- lightweight HF fallback ----
+from transformers import pipeline
+import torch
+device = torch.device("cpu")
+restorer   = pipeline("image-classification", model="tencentarc/gfpgan", device=device)  # 350 MB download
+colorizer  = pipeline("image-to-image",       model="eugenesiow/deoldify", device=device) # 200 MB download
 
 # Configure device for CPU-only operation
 device.set(device=DeviceId.CPU)
