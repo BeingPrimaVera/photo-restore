@@ -1,0 +1,25 @@
+---
+title: AI Photo Restoration & Colorization Space
+tasks:
+  - image-to-image
+  - computer-vision
+  - image-classification
+
+# Optional: Space metadata
+emoji: 📸
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+
+# Optional: Space hardware configuration
+hardware:
+  cpu: basic
+  memory: 4GB
+
+# Optional: Space environment variables
+env:
+  - name: CUDA_VISIBLE_DEVICES
+    value: ""
+  - name: DEVICE
+    value: "cpu"
