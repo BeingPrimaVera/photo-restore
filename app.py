@@ -32,8 +32,12 @@ import cv2
 # ---- REAL Transformers models (download in seconds) ----
 from transformers import pipeline
 device = torch.device("cpu")
-restorer  = pipeline("image-to-image", model="eugenesiow/gfpgan",   device=device)
-colorizer = pipeline("image-to-image", model="eugenesiow/deoldify", device=device)
+
+# ✅ Face restoration – real Transformers
+restorer  = pipeline("image-to-image", model="microsoft/DiNAT-mini", device=device)
+
+# ✅ Colorisation – real Transformers  
+colorizer = pipeline("image-to-image", model="lllyasviel/Adelaide", device=device)
 
 # Global variables for models and cache
 restorer = None
