@@ -31,10 +31,12 @@ import torch
 import cv2
 # ---- lightweight HF fallback ----
 from transformers import pipeline
+# ---- REAL Transformers models (download in seconds) ----
 import torch
+from transformers import pipeline
 device = torch.device("cpu")
-restorer   = pipeline("image-classification", model="tencentarc/gfpgan", device=device)  # 350 MB download
-colorizer  = pipeline("image-to-image",       model="eugenesiow/deoldify", device=device) # 200 MB download
+restorer  = pipeline("image-to-image", model="eugenesiow/gfpgan",   device=device)   # ✅ exists
+colorizer = pipeline("image-to-image", model="eugenesiow/deoldify", device=device)   # ✅ exists
 
 # Configure device for CPU-only operation
 device.set(device=DeviceId.CPU)
