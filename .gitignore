@@ -43,8 +43,7 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific
-outputs/
-models/
+
 *.pth
 *.ckpt
 *.pkl
